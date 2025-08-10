@@ -9,10 +9,27 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { FaCheckDouble } from "react-icons/fa";
+
+export function AppLogo() {
+  return (
+    <div className="flex gap-2 items-center mb-11 justify-center">
+      <div className="bg-primary p-é text-white rounded-sm text-lg">
+        <FaCheckDouble />
+      </div>
+
+      <div className="font-bold text-2xl flex gap-1 justify-center items-center">
+        <span className="text-primary">Quick</span>
+        <span>Tasks</span>
+      </div>
+    </div>
+  );
+}
 
 export function SignIn({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
+      <AppLogo />
       <Card>
         <CardHeader>
           <CardTitle>Login</CardTitle>
