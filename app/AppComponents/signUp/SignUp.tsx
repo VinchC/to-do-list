@@ -12,19 +12,23 @@ import { Label } from "@/components/ui/label";
 import { AppLogo } from "../AppLogo";
 import Link from "next/link";
 
-export function SignIn() {
+export function SignUp() {
   return (
     <div>
       <AppLogo />
       <Card className="w-sm py-2">
         <CardHeader>
-          <CardTitle className="text-[22px] font-bold">Login</CardTitle>
+          <CardTitle className="text-[22px] font-bold">Sign up</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter your information to create an account
           </CardDescription>
         </CardHeader>
 
         <CardContent className="grid gap-5 mt-3">
+          <div className="grid gap-2">
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" type="text" placeholder="Your name" required />
+          </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -45,25 +49,26 @@ export function SignIn() {
               placeholder="Your password..."
             />
 
-            <a
-              href="#"
-              className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-            >
-              Forgot your password?
-            </a>
+            <Label htmlFor="password">Confirm Password</Label>
+
+            <Input
+              id="password"
+              type="password"
+              required
+              placeholder="Your password..."
+            />
           </div>
 
           <div className="mt-4 text-sm flex items-center justify-center gap-1">
-            <span>Don&apos;t have an account?</span>
+            <span>Already have an account?</span>
             <Label className="text-primary">
-              <Link href={"/sign-up"}>Sign up</Link>
+              <Link href={"/"}>Sign in</Link>
             </Label>
           </div>
         </CardContent>
         <CardFooter>
           <div className="flex flex-col gap-3 w-full">
-            <Button type="submit">Sign in</Button>
-            <Button variant="outline">Sign in with Google</Button>
+            <Button type="submit">Create an account</Button>
           </div>
         </CardFooter>
       </Card>
