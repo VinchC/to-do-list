@@ -115,9 +115,16 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-family: var(--font-garamond);
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .basic-layer {
+    @apply flex justify-center items-center h-screen;
   }
 }
 
@@ -125,6 +132,6 @@
   font-family: var(--font-poppins);
 }
 
-.garamond {
+/* .garamond {
   font-family: var(--font-garamond);
-}
+} */
