@@ -7,10 +7,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AppLogo } from "../AppLogo";
 import Link from "next/link";
+import EmailInput from "../EmailInput";
+import PasswordInput from "../PasswordInput";
 
 export function SignUp() {
   return (
@@ -25,40 +26,10 @@ export function SignUp() {
         </CardHeader>
 
         <CardContent className="grid gap-5 mt-3">
-          <div className="grid gap-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" type="text" placeholder="Your name" required />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="m@example.com"
-              required
-            />
-          </div>
+          <EmailInput name="email" label="Email" />
+          <PasswordInput name="password" label="Password" />
 
-          <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
-
-            <Input
-              id="password"
-              type="password"
-              required
-              placeholder="Your password..."
-            />
-
-            <Label htmlFor="password">Confirm Password</Label>
-
-            <Input
-              id="password"
-              type="password"
-              required
-              placeholder="Your password..."
-            />
-          </div>
-
+          <PasswordInput name="confirmPassword" label="Confirm Password" />
           <div className="mt-4 text-sm flex items-center justify-center gap-1">
             <span>Already have an account?</span>
             <Label className="text-primary">
