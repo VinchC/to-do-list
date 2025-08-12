@@ -5,6 +5,7 @@ import { useFormContext } from "react-hook-form";
 
 function EmailInput({ name, label }: { name: string; label: string }) {
   const {
+    register,
     formState: { errors },
   } = useFormContext();
 
@@ -12,7 +13,13 @@ function EmailInput({ name, label }: { name: string; label: string }) {
   return (
     <div className="grid gap-2 relative">
       <Label htmlFor="email">{label}</Label>
-      <Input id={name} type="email" placeholder="m@example.com" required />
+      <Input
+        id={name}
+        {...register(name)}
+        type="email"
+        placeholder="m@example.com"
+        required
+      />
       {errorMessage && <ErrorHoverCard message={errorMessage} />}
     </div>
   );

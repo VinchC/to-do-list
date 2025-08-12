@@ -39,7 +39,11 @@ export function SignUp() {
       toast("Validation error");
     }
 
-    if (errors.password || errors.confirmPassword) {
+    if (errors.password) {
+      toast("Passwords must match");
+    }
+
+    if (errors.confirmPassword) {
       toast("Passwords must match");
     }
   };
